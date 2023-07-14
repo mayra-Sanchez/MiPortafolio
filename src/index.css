@@ -11,3 +11,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.navbarListado {
+  list-style: none;
+  display: flex;
+  align-items: flex-start;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+}
+
+.navbarItems{
+  margin: 0 20px;
+  align-items: flex-start;
+  margin-top: 35px;
+}
+
+.navbar-home{
+  text-decoration: none;
+  color: #000000;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 20px;
+}
