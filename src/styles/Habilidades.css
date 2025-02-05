@@ -1,0 +1,103 @@
+/* Habilidades.css */
+.habilidades {
+    text-align: center;
+    padding: 30px;
+}
+
+.habilidades h1 {
+    font-size: 2.8rem;
+    color: #0288d1; /* Azul profesional */
+    margin-bottom: 30px;
+    font-weight: 700;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Animación de entrada para el título */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.habilidades-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    margin-top: 20px;
+}
+
+/* Estilo de cada tarjeta de habilidad */
+.habilidad-card {
+    background-color: #e3f2fd; /* Azul claro como fondo */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    width: 100%;
+    max-width: 180px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto hover sobre las tarjetas de habilidades */
+.habilidad-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    background-color: #64b5f6; /* Azul más intenso */
+}
+
+/* Efecto hover en el texto dentro de la tarjeta */
+.habilidad-card p {
+    font-size: 1rem;
+    color: #555;
+    font-weight: 500;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+.habilidad-card:hover p {
+    color: #ffffff; /* Cambia a blanco en el hover */
+}
+
+/* Estilo de las imágenes (logos de las habilidades) */
+.habilidad-card img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Efecto hover sobre las imágenes */
+.habilidad-card:hover img {
+    transform: scale(1.1); /* Escala la imagen */
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2)); /* Agrega sombra para un toque más dinámico */
+}
+
+/* Descripción de cada habilidad */
+.habilidad-card .descripcion {
+    display: none;
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: 10px;
+    transition: opacity 0.3s ease;
+}
+
+/* Mostrar la descripción al hacer hover */
+.habilidad-card:hover .descripcion {
+    display: block;
+    opacity: 1;
+}
+
+/* Efecto para cada tarjeta al hacer clic */
+.habilidad-card:active {
+    transform: translateY(3px); /* Efecto de presionar la tarjeta */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}

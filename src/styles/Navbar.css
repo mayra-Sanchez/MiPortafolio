@@ -1,0 +1,64 @@
+/* Navbar.css */
+
+/* Estilos para pantallas grandes (o por defecto) */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #333;
+  padding: 10px 20px;
+  z-index: 1000;
+}
+
+/* Para que el contenido no quede oculto por el navbar fijo */
+.content {
+  padding-top: 60px;
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.navbar ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 16px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+  background-color: #555;
+}
+
+.navbar ul li a.active {
+  border-bottom: 2px solid #61dafb;
+}
+
+/* Media queries para pantallas medianas y pequeñas */
+@media (max-width: 768px) {
+  /* Cambiamos el navbar a posición relativa para que no flote sobre el contenido */
+  .navbar {
+    position: relative;
+  }
+  
+  /* Ajustamos la lista para apilar los elementos verticalmente */
+  .navbar ul {
+    flex-direction: column;
+  }
+  
+  .navbar ul li {
+    margin-bottom: 10px;
+  }
+  
+  /* Como el navbar ya no es fijo, removemos el padding extra en el contenido */
+  .content {
+    padding-top: 0;
+  }
+}

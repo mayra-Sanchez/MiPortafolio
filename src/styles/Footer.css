@@ -1,0 +1,53 @@
+/* Footer.css */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #222;
+  color: #fff;
+  z-index: 1000;
+}
+
+.footer-content {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-logo .logo-img {
+  width: 100px;
+}
+
+.footer-links a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 24px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #61dafb;
+}
+
+.footer-copy {
+  text-align: center;
+  font-size: 14px;
+  border-top: 1px solid #444;
+}
+
+/* Aseguramos que el contenido principal no quede tapado */
+.main-content {
+  padding-bottom: 100px; /* Ajusta si modificas la altura del footer */
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 480px) {
+  .footer-links a {
+    font-size: 20px;
+    margin: 0 5px;
+  }
+}

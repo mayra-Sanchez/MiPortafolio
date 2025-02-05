@@ -1,0 +1,170 @@
+/* Contacto.css */
+.contacto {
+  font-family: 'Roboto', sans-serif;
+  padding: 100px 80px 120px; /* Ajusta según la altura de tu navbar y footer */
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.contacto h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: #0288d1; /* Azul para mantener el estilo coherente */
+  font-weight: 700;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Animación de entrada para el título */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contacto-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.contacto-form-container,
+.contacto-info {
+  flex: 1 1 calc(50% - 30px);
+  background: #fff;
+  border-radius: 8px;
+  margin-top: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Formulario */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  margin-top: 5px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #0288d1; /* Azul para el enfoque */
+  outline: none;
+}
+
+/* Botón de envío */
+.btn-submit {
+  width: 100%;
+  padding: 15px;
+  font-size: 1rem;
+  background-color: #0288d1; /* Azul profesional */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  box-sizing: border-box;
+}
+
+.btn-submit:hover {
+  background-color: #0056b3; /* Azul más oscuro en hover */
+}
+
+.btn-submit:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Confirmación */
+.confirmation {
+  text-align: center;
+  margin-top: 20px;
+  color: #28a745; /* Verde para confirmación */
+  font-weight: bold;
+}
+
+/* Información de contacto */
+.contacto-info h2 {
+  font-size: 1.5rem;
+  color: #0288d1;
+  margin-bottom: 10px;
+}
+
+.contacto-info p {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.social-link {
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: #0288d1;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.social-link:hover {
+  color: #0056b3; /* Hover en los enlaces sociales */
+}
+
+label {
+  text-align: left;
+  padding: 10px;
+}
+
+/* Media queries para dispositivos medianos y pequeños */
+@media (max-width: 768px) {
+  .contacto {
+    padding: 90px 50px 160px;
+  }
+  .contacto-container {
+    flex-direction: column;
+  }
+  .contacto-form-container,
+  .contacto-info {
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .contacto {
+    padding: 100px 50px 160px;
+  }
+  .form-group input,
+  .form-group textarea {
+    padding: 10px;
+  }
+  .btn-submit {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+}
