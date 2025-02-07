@@ -2,6 +2,8 @@ import { useState } from 'react';
 import '../styles/Certificados.css';
 import certificado from "../assets/certificados/liderazgo_de_equipos_678e7acab7d38.pdf";
 import logoMichigan from "../assets/certificados/1631307390795.jpg"
+import certificado2 from "../assets/certificados/Coursera 7CSVQ7KF9BUE.pdf";
+import logoMeta from "../assets/certificados/facebook_logo.jpg"
 
 // Definir el tipo de Certificado
 interface Certificado {
@@ -24,6 +26,15 @@ const certificadosData: Certificado[] = [
     fecha: "Ene. 2025",
     idCredencial: "I0TY6EHWF724",
     archivoCertificado: certificado,
+  },
+  {
+    id: 2,
+    logo: logoMeta,
+    titulo: "Introducción al desarrollo de front-end",
+    institucion: "Meta",
+    fecha: "Feb. 2025",
+    idCredencial: "7CSVQ7KF9BUE",
+    archivoCertificado: certificado2,
   }
 ];
 

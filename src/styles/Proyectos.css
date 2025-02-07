@@ -1,62 +1,232 @@
-.proyectos {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 50px 20px;
-    text-align: center;
+/* Proyectos.css */
+
+/* Estilo general para la sección de Proyectos */
+.proyectos h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  color: #0288d1; /* Azul profesional */
+  font-weight: 700;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Animación de entrada para el título */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
   }
-  
-  .proyecto-card {
-    display: flex; /* Usamos Flexbox para dividir en dos */
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    margin-bottom: 20px; /* Espacio entre tarjetas */
-    padding: 10px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .proyecto-img-container {
-    flex: 1;
-    padding-right: 20px;
+}
+
+.proyectos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px; /* Aumentado para más separación */
+  margin-top: 30px; /* Ajustado */
+}
+
+
+/* Estilos para cada card de proyecto */
+.proyecto-card {
+  background-color: #e3f2fd; /* Azul claro como fondo */
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* Efecto hover sobre las cards de proyecto */
+.proyecto-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  background-color: #64b5f6; /* Azul más intenso */
+}
+
+/* Imagen del proyecto */
+.proyecto-imagen {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+/* Efecto hover sobre la imagen */
+.proyecto-card:hover .proyecto-imagen {
+  transform: scale(1.05);
+}
+
+/* Información dentro del proyecto */
+.proyecto-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.proyecto-info h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #333;
+}
+
+.proyecto-info p {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #555;
+}
+
+a{
+  gap:50px;
+}
+
+.btn-proyecto{
+  text-decoration: none;
+}
+
+/* Estilos para el modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  padding: 30px;
+}
+.habilidades, .repositorios {
+  margin-bottom: 20px;
+}
+
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 30px;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Sección de habilidades en el modal */
+.modal-habilidades {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.habilidad {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #e3f2fd;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.habilidad img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Botones para los repositorios */
+.btn-repo {
+  display: block;
+  padding: 10px;
+  background-color: #0288d1;
+  color: white;
+  border: none;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-repo:hover {
+  background-color: #0056b3;
+}
+
+/* Ajuste para dispositivos pequeños */
+@media (max-width: 480px) {
+  .proyectos-container {
+    grid-template-columns: 1fr;
   }
-  
-  .proyecto-img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px; /* Redondeamos las esquinas de la imagen */
-  }
-  
-  .proyecto-info {
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  .proyecto-info h2 {
-    font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  .proyecto-info p {
-    font-size: 1rem;
-    color: #777;
-    margin-bottom: 15px;
-  }
-  
-  .btn-ver-mas {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    max-width: 120px;
-    text-align: center;
-  }
-  
-  .btn-ver-mas:hover {
-    background-color: #45a049;
-  }
-  
+}
+
+/* Párrafo introductorio */
+.parrafo {
+  font-size: 14px;
+  color: #000000;
+  margin-bottom: 30px;
+  font-weight: 700;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Estilos para las habilidades */
+.habilidades {
+  margin-top: 15px;
+}
+
+.habilidades h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.habilidades-lista {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.habilidad-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f0f0f0;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+/* Estilos para los enlaces de repositorios */
+.repositorios {
+  margin-top: 20px;
+}
+
+.repositorios h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.btn-repositorio {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #24292e;
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  margin-top: 5px;
+  transition: background 0.3s ease;
+}
+
+.btn-repositorio:hover {
+  background-color: #0366d6;
+}

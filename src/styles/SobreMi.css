@@ -1,0 +1,60 @@
+.sobre-mi {
+    text-align: center;
+
+  }
+  
+  .sobre-mi h1 {
+    font-size: 2.5rem;
+    color: #0288d1;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .sobre-mi p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    color: #333;
+  }
+  
+  .botones-filtro {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 10px;
+  }
+  
+  .botones-filtro button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    background-color: #ccc;
+    color: black;
+  }
+  
+  .botones-filtro button:hover {
+    background-color: #0288d1;
+    color: white;
+  }
+  
+  .botones-filtro .activo {
+    background-color: #0288d1;
+    color: white;
+    font-weight: bold;
+  }
+  
+  /* Animación */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

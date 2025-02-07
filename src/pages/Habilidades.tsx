@@ -11,6 +11,19 @@ import scratch from '../assets/icons/scratch.svg';
 import jira from '../assets/icons/jira.svg';
 import django from '../assets/icons/django.svg';
 import vercel from '../assets/icons/vercel.svg';
+import python from '../assets/icons/python.svg';
+import java from '../assets/icons/java-svgrepo-com.svg';
+import css from '../assets/icons/css.svg';
+import html from '../assets/icons/html5.svg';
+import powerbi from '../assets/icons/icons8-power-bi.svg';
+import uxui from '../assets/icons/interface-ui-ux-web-svgrepo-com.svg';
+import scrum from '../assets/icons/scrum-svgrepo-com.svg';
+import ieee830 from '../assets/icons/ieee.svg';
+import selenium from '../assets/icons/selenium.svg';
+import junit from '../assets/icons/junit5.svg';
+import gherkin from '../assets/icons/gherkin-svgrepo-com.svg';
+import cucumber from '../assets/icons/cucumber.svg';
+
 
 const habilidades = [
   { nombre: "JavaScript", logo: javascript, descripcion: "Lenguaje de programación para aplicaciones web." },
@@ -25,7 +38,19 @@ const habilidades = [
   { nombre: "Jira", logo: jira, descripcion: "Herramienta para gestión de proyectos ágiles." },
   { nombre: "Django", logo: django, descripcion: "Framework para desarrollo web en Python." },
   { nombre: "Vercel", logo: vercel, descripcion: "Plataforma para despliegue de aplicaciones web." },
-];
+  { nombre: "Python", logo: python, descripcion: "Lenguaje de programación versátil." },
+  { nombre: "Java", logo: java, descripcion: "Lenguaje de programación orientado a objetos." },
+  { nombre: "HTML", logo: html, descripcion: "Lenguaje de marcado para estructurar páginas web." },
+  { nombre: "CSS", logo: css, descripcion: "Lenguaje de estilos para diseño web." },
+  { nombre: "Power BI", logo: powerbi, descripcion: "Herramienta de análisis de datos y visualización." },
+  { nombre: "UX/UI", logo: uxui, descripcion: "Diseño centrado en la experiencia de usuario." },
+  { nombre: "Scrum", logo: scrum, descripcion: "Metodología ágil para gestión de proyectos." },
+  { nombre: "IEEE 830", logo: ieee830, descripcion: "Estándar para documentación de requerimientos de software." },
+  { nombre: "Selenium", logo: selenium, descripcion: "Herramienta para automatización de pruebas en navegadores." },
+  { nombre: "JUnit", logo: junit, descripcion: "Framework para pruebas unitarias en Java." },
+  { nombre: "Gherkin", logo: gherkin, descripcion: "Lenguaje para escribir pruebas en BDD." },
+  { nombre: "Cucumber", logo: cucumber, descripcion: "Herramienta para pruebas de aceptación BDD." },
+  ];
 
 const Habilidades = () => {
   return (
