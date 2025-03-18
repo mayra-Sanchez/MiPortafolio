@@ -4,6 +4,15 @@ import certificado from "../assets/certificados/liderazgo_de_equipos_678e7acab7d
 import logoMichigan from "../assets/certificados/1631307390795.jpg"
 import certificado2 from "../assets/certificados/Coursera 7CSVQ7KF9BUE.pdf";
 import logoMeta from "../assets/certificados/facebook_logo.jpg"
+import logoPlatzi from "../assets/certificados/platzi_logo.jpg";
+import logoGoogle from "../assets/certificados/google_logo.png";
+import logoHPLife from "../assets/certificados/hp_life_logo.png";
+import certificado3 from "../assets/certificados/1742219989764.pdf";
+import certificado4 from "../assets/certificados/diploma-tomar-decisiones-trabajo.pdf";
+import certificado5 from "../assets/certificados/Coursera MSZH0VO8RNZX.pdf";
+import certificado6 from "../assets/certificados/Coursera CNPH0UKTODL7.pdf";
+import certificado7 from "../assets/certificados/certificate.pdf";
+import certificado8 from "../assets/certificados/Coursera NTHSA2KKY2PO.pdf";
 
 // Definir el tipo de Certificado
 interface Certificado {
@@ -35,7 +44,14 @@ const certificadosData: Certificado[] = [
     fecha: "Feb. 2025",
     idCredencial: "7CSVQ7KF9BUE",
     archivoCertificado: certificado2,
-  }
+  },
+  { id: 3, logo: logoPlatzi, titulo: "Curso de Toma de Decisiones Basadas en Datos", institucion: "Platzi", fecha: "Mar. 2025", idCredencial: "5aaf47f3-9ae7-46fd-bfce-29a333ce9dde", archivoCertificado: certificado3 },
+  { id: 4, logo: logoPlatzi, titulo: "Curso para Tomar Decisiones en el Trabajo", institucion: "Platzi", fecha: "Mar. 2025", idCredencial: "dc7b87a4-c4c4-4bb9-8857-67152fbf3d07", archivoCertificado: certificado4 },
+  { id: 5, logo: logoGoogle, titulo: "Fundamentos: datos, datos, en todas partes", institucion: "Google", fecha: "Mar. 2025", idCredencial: "MSZH0VO8RNZX", archivoCertificado: certificado5 },
+  { id: 6, logo: logoMeta, titulo: "Control de versión", institucion: "Meta", fecha: "Feb. 2025", idCredencial: "CNPH0UKTODL7", archivoCertificado: certificado6 },
+  { id: 7, logo: logoHPLife, titulo: "Gestión de proyectos con Agile", institucion: "HP LIFE", fecha: "Feb. 2025", idCredencial: "10219b0d-7d3c-4173-9f4c-aed3319e3eff", archivoCertificado: certificado7 },
+  { id: 8, logo: logoMeta, titulo: "Programación con JavaScript", institucion: "Meta", fecha: "Feb. 2025", idCredencial: "NTHSA2KKY2PO", archivoCertificado: certificado8 }
+
 ];
 
 const Certificados = () => {

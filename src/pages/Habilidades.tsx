@@ -23,6 +23,9 @@ import selenium from '../assets/icons/selenium.svg';
 import junit from '../assets/icons/junit5.svg';
 import gherkin from '../assets/icons/gherkin-svgrepo-com.svg';
 import cucumber from '../assets/icons/cucumber.svg';
+import digitalocean from '../assets/icons/digitalocean-official.svg';
+import namecheap from '../assets/icons/namecheap.svg';
+import wordpress from '../assets/icons/wordpress-logo.svg';
 
 
 const habilidades = [
@@ -50,7 +53,10 @@ const habilidades = [
   { nombre: "JUnit", logo: junit, descripcion: "Framework para pruebas unitarias en Java." },
   { nombre: "Gherkin", logo: gherkin, descripcion: "Lenguaje para escribir pruebas en BDD." },
   { nombre: "Cucumber", logo: cucumber, descripcion: "Herramienta para pruebas de aceptación BDD." },
-  ];
+  { nombre: "DigitalOcean", logo: digitalocean, descripcion: "Plataforma de cloud computing para despliegue de aplicaciones." },
+  { nombre: "Namecheap", logo: namecheap, descripcion: "Servicio de registro de dominios y hosting web." },
+  { nombre: "WordPress", logo: wordpress, descripcion: "Sistema de gestión de contenidos (CMS) para crear sitios web." }
+];
 
 const Habilidades = () => {
   return (

@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import '../styles/Proyectos.css';
-import { FaReact, FaDatabase, FaGithub, FaPython, FaJs, FaCss3, FaHtml5 } from 'react-icons/fa';
+import { FaReact, FaDatabase, FaGithub,FaCloud, FaGlobe, FaPython, FaJs, FaCss3, FaHtml5 } from 'react-icons/fa';
 import imagen1 from '../assets/Captura de pantalla 2025-02-07 093030.png';
 import imagen2 from '../assets/tutor_virtual.png';
 import imagen3 from '../assets/cheap.png';
 import imagen4 from '../assets/food.png';
+import imagen5 from '../assets/community.png';
 import { FaAngular } from 'react-icons/fa6';
 
 // Definir el tipo de Proyecto
@@ -32,6 +33,8 @@ const proyectosData: Proyecto[] = [
       { nombre: 'Django', icono: <FaPython size={24} color="#3C873A" /> },
       { nombre: 'PostgreSQL', icono: <FaDatabase size={24} color="black" /> },
       { nombre: 'HTML', icono: <FaHtml5 size={24} color="#orange" /> },
+      { nombre: 'DigitalOcean', icono: <FaCloud size={24} color="#0080FF" /> },
+      { nombre: 'Namecheap', icono: <FaGlobe size={24} color="#FF6600" /> }
     ],
     repositorios: [
       { nombre: 'Frontend', url: 'https://github.com/mayra-Sanchez/wm_siteweb' },
@@ -72,7 +75,7 @@ const proyectosData: Proyecto[] = [
       { nombre: 'Frontend', url: 'https://github.com/mayra-Sanchez/CheapFly_front' },
       { nombre: 'Backend', url: 'https://github.com/JesusAdrianP/CheapFly_backend' }
     ]
-  }  ,
+  },
   {
     id: 4,
     nombre: 'Food Lens',
@@ -90,7 +93,23 @@ const proyectosData: Proyecto[] = [
       { nombre: 'Frontend', url: 'https://github.com/Lau36/FoodLens' },
       { nombre: 'Backend', url: 'https://github.com/SantiagoCasanas/API-FoodLeens' }
     ]
-  }    
+  },
+  {
+    id: 5,
+    nombre: 'Community Landing',
+    descripcion: 'Landing para empresa comunnity manager',
+    imagen: imagen5,
+    enlace: 'https://mayra-sanchez.github.io/community_landing/',
+    habilidades: [
+      { nombre: 'React', icono: <FaReact size={24} color="#61DBFB" /> },
+      { nombre: 'JavaScript', icono: <FaJs size={24} color="yellow" /> },
+      { nombre: 'CSS', icono: <FaCss3 size={24} color="#61DBFB" /> },
+      { nombre: 'HTML', icono: <FaHtml5 size={24} color="#orange" /> },
+    ],
+    repositorios: [
+      { nombre: 'Frontend', url: 'https://github.com/mayra-Sanchez/community_landing' },
+    ]
+  }
 ];
 
 const Proyectos = () => {
