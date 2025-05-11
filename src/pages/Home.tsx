@@ -1,47 +1,74 @@
-import { FaCode, FaUsers, FaCogs } from "react-icons/fa";
+import { FaCode, FaUsers, FaCog, FaLanguage, FaChartLine, FaDatabase } from "react-icons/fa";
 import "../styles/Home.css";
 
 const Home = () => {
+  const interests = [
+    { icon: <FaCode />, name: "Desarrollo de software" },
+    { icon: <FaUsers />, name: "Trabajo en equipo" },
+    { icon: <FaCog />, name: "Metodologías Ágiles" },
+    { icon: <FaChartLine />, name: "Calidad de software" },
+    { icon: <FaUsers />, name: "UX/UI" },
+    { icon: <FaDatabase />, name: "Gestión de datos" }
+  ];
+
+  const languages = [
+    { name: "Español", level: 5 },
+    { name: "Inglés", level: 3 }
+  ];
+
   return (
-    <div className="home">
-      {/* Sección de Presentación */}
-      <section className="perfil-profesional">
-        <h1>¡Hola, soy Mayra Sánchez! 👋</h1>
-        <p>
-          Ingeniera de sistemas en formación con experiencia en el desarrollo de <strong>aplicaciones web</strong>,
-          <strong> calidad de software</strong> y <strong>gestión de datos</strong>. 
-          Apasionada por la tecnología, la inteligencia artificial y el desarrollo ágil.
-        </p>
-      </section>
-
-      {/* Sección de Intereses */}
-      <section className="intereses">
-        <h2>Áreas de Interés</h2>
-        <div className="intereses-grid">
-          <div className="interes-card"><FaCode size={25} /> Desarrollo de software</div>
-          <div className="interes-card"><FaUsers size={25} /> Trabajo en equipo</div>
-          <div className="interes-card"><FaCogs size={25} /> Metodologías Ágiles</div>
-          <div className="interes-card"><FaCode size={25} /> Calidad de software</div>
-          <div className="interes-card"><FaUsers size={25} /> UX/UI</div>
-          <div className="interes-card"><FaCogs size={25} /> Gestión de datos</div>
+    <div className="home-container">
+      {/* Hero Section */}
+      <section className="hero-section">
+        <div className="hero-content">
+          <h1 className="hero-title">
+            ¡Hola, soy <span className="name-highlight">Mayra Sánchez</span>! <span className="hand-emoji">👋</span>
+          </h1>
+          <p className="hero-description">
+            Ingeniera de sistemas en formación con experiencia en el desarrollo de <strong>aplicaciones web</strong>, 
+            <strong> calidad de software</strong> y <strong>gestión de datos</strong>. 
+            Apasionada por la tecnología, la inteligencia artificial y el desarrollo ágil.
+          </p>
         </div>
       </section>
 
-      {/* Sección de Idiomas */}
-      <section className="languages">
-        <h2>Idiomas</h2>
-        <div className="language">
-          <span>Español</span>
-          <div className="dots">
-            {[...Array(5)].map((_, index) => (<span key={index} className="dot filled"></span>))}
-          </div>
+      {/* Interests Section */}
+      <section className="interests-section">
+        <h2 className="section-title">
+          <FaCode className="title-icon" /> Áreas de Interés
+        </h2>
+        <div className="interests-grid">
+          {interests.map((interest, index) => (
+            <div key={index} className="interest-card">
+              <div className="interest-icon">{interest.icon}</div>
+              <span>{interest.name}</span>
+            </div>
+          ))}
         </div>
-        <div className="language">
-          <span>Inglés</span>
-          <div className="dots">
-            {[...Array(3)].map((_, index) => (<span key={index} className="dot filled"></span>))}
-            {[...Array(2)].map((_, index) => (<span key={index} className="dot empty"></span>))}
-          </div>
+      </section>
+
+      {/* Languages Section */}
+      <section className="languages-section">
+        <h2 className="section-title">
+          <FaLanguage className="title-icon" /> Idiomas
+        </h2>
+        <div className="languages-container">
+          {languages.map((language, index) => (
+            <div key={index} className="language-item">
+              <span className="language-name">{language.name}</span>
+              <div className="language-level">
+                {[...Array(5)].map((_, i) => (
+                  <div 
+                    key={i} 
+                    className={`level-dot ${i < language.level ? 'filled' : 'empty'}`}
+                  />
+                ))}
+                <span className="level-text">
+                  {language.level === 5 ? 'Nativo' : `${language.level}/5`}
+                </span>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
     </div>

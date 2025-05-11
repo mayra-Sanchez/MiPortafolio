@@ -1,96 +1,172 @@
 /* Proyectos.css */
 
-/* Estilo general para la sección de Proyectos */
-.proyectos h1 {
+:root {
+  /* Reutilizando la misma paleta de colores */
+  --primary: #4e46e5;
+  --primary-dark: #3a32d1;
+  --primary-light: #e0e7ff;
+  --secondary: #8b5cf6;
+  --accent: #ec4899;
+  --dark: #1e1b4b;
+  --light: #f8fafc;
+  --gray: #64748b;
+  --white: #ffffff;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Estilos base */
+.proyectos-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  color: var(--dark);
+  background-color: var(--white);
+}
+
+.proyectos-header {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 3rem;
+  padding: 0 1rem;
+}
+
+.proyectos-header h1 {
   font-size: 2.5rem;
-  color: #0288d1; /* Azul profesional */
+  color: var(--primary);
+  margin-bottom: 0.8rem;
   font-weight: 700;
-  animation: fadeIn 1s ease-in-out;
+  line-height: 1.2;
 }
 
-/* Animación de entrada para el título */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.proyectos-subtitulo {
+  font-size: 1.1rem;
+  color: var(--gray);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.proyectos-container {
+/* Grid de proyectos */
+.proyectos-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 30px; /* Aumentado para más separación */
-  margin-top: 30px; /* Ajustado */
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
-
-/* Estilos para cada card de proyecto */
 .proyecto-card {
-  background-color: #e3f2fd; /* Azul claro como fondo */
-  border: 1px solid #ddd;
+  background: var(--white);
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-/* Efecto hover sobre las cards de proyecto */
 .proyecto-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  background-color: #64b5f6; /* Azul más intenso */
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Imagen del proyecto */
+.proyecto-imagen-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
 .proyecto-imagen {
   width: 100%;
-  height: auto;
-  max-height: 200px;
+  height: 100%;
   object-fit: cover;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
+  transition: var(--transition);
 }
 
-/* Efecto hover sobre la imagen */
 .proyecto-card:hover .proyecto-imagen {
   transform: scale(1.05);
 }
 
-/* Información dentro del proyecto */
-.proyecto-info {
+.proyecto-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(30, 27, 75, 0.8);
+  color: var(--white);
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: var(--transition);
 }
 
-.proyecto-info h2 {
-  font-size: 18px;
-  margin-bottom: 10px;
+.proyecto-card:hover .proyecto-overlay {
+  opacity: 1;
+}
+
+.proyecto-overlay h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.ver-detalles-btn {
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
   font-weight: 600;
-  color: #333;
+  cursor: pointer;
+  transition: var(--transition);
 }
 
-.proyecto-info p {
-  margin-bottom: 5px;
-  font-size: 14px;
-  color: #555;
+.ver-detalles-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
 }
 
-a{
-  gap:50px;
+.proyecto-habilidades {
+  display: flex;
+  padding: 1rem;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
-.btn-proyecto{
-  text-decoration: none;
+.habilidad-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: var(--white);
+  transition: var(--transition);
 }
 
-/* Estilos para el modal */
+.habilidad-badge:hover {
+  transform: scale(1.1);
+}
+
+.habilidad-more {
+  background: var(--light);
+  color: var(--dark);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Modal */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -102,131 +178,204 @@ a{
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  padding: 2rem;
 }
 
 .modal-content {
-  padding: 30px;
+  background: var(--white);
+  border-radius: 12px;
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  position: relative;
 }
-.habilidades, .repositorios {
-  margin-bottom: 20px;
-}
-
 
 .modal-close {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  background: transparent;
+  top: 1rem;
+  right: 1rem;
+  background: none;
   border: none;
-  font-size: 30px;
-  color: #333;
+  font-size: 1.5rem;
   cursor: pointer;
+  color: var(--gray);
+  transition: var(--transition);
 }
 
-/* Sección de habilidades en el modal */
-.modal-habilidades {
+.modal-close:hover {
+  color: var(--primary);
+  transform: rotate(90deg);
+}
+
+.modal-header {
+  padding: 2rem 2rem 1rem;
+  border-bottom: 1px solid var(--primary-light);
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 15px;
+  gap: 1rem;
 }
 
-.habilidad {
+.modal-header h2 {
+  color: var(--primary);
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.enlace-proyecto {
   display: flex;
   align-items: center;
-  gap: 5px;
-  background: #e3f2fd;
-  padding: 5px 10px;
-  border-radius: 5px;
-}
-
-.habilidad img {
-  width: 20px;
-  height: 20px;
-}
-
-/* Botones para los repositorios */
-.btn-repo {
-  display: block;
-  padding: 10px;
-  background-color: #0288d1;
-  color: white;
-  border: none;
+  gap: 0.5rem;
+  color: var(--secondary);
+  font-weight: 600;
   text-decoration: none;
-  border-radius: 5px;
-  text-align: center;
-  margin-top: 10px;
-  transition: background-color 0.3s ease;
+  transition: var(--transition);
 }
 
-.btn-repo:hover {
-  background-color: #0056b3;
+.enlace-proyecto:hover {
+  color: var(--primary);
 }
 
-/* Ajuste para dispositivos pequeños */
-@media (max-width: 480px) {
-  .proyectos-container {
-    grid-template-columns: 1fr;
-  }
+.modal-body {
+  padding: 1rem 2rem 2rem;
 }
 
-/* Párrafo introductorio */
-.parrafo {
-  font-size: 14px;
-  color: #000000;
-  margin-bottom: 30px;
-  font-weight: 700;
-  animation: fadeIn 1s ease-in-out;
+.modal-imagen {
+  width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--primary-light);
 }
 
-/* Estilos para las habilidades */
-.habilidades {
-  margin-top: 15px;
+.modal-descripcion h3,
+.modal-habilidades h3,
+.modal-repositorios h3 {
+  color: var(--primary);
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-bottom: 0.5rem;
 }
 
-.habilidades h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
+.modal-descripcion h3::after,
+.modal-habilidades h3::after,
+.modal-repositorios h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--primary);
+}
+
+.modal-descripcion p {
+  color: var(--dark);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
 }
 
 .habilidades-lista {
   display: flex;
-  gap: 15px;
   flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
 .habilidad-item {
   display: flex;
   align-items: center;
-  gap: 8px;
-  background: #f0f0f0;
-  padding: 8px 12px;
-  border-radius: 8px;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  border: 2px solid;
+  transition: var(--transition);
 }
 
-/* Estilos para los enlaces de repositorios */
-.repositorios {
-  margin-top: 20px;
+.habilidad-item:hover {
+  transform: translateY(-3px);
 }
 
-.repositorios h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.btn-repositorio {
+.habilidad-icon {
   display: flex;
   align-items: center;
-  gap: 8px;
-  background-color: #24292e;
-  color: white;
-  padding: 10px;
-  border-radius: 6px;
-  text-decoration: none;
-  margin-top: 5px;
-  transition: background 0.3s ease;
 }
 
-.btn-repositorio:hover {
-  background-color: #0366d6;
+.repositorios-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.repositorio-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--dark);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: var(--transition);
+}
+
+.repositorio-link:hover {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .proyectos-section {
+    padding: 2rem 1rem;
+  }
+  
+  .proyectos-header h1 {
+    font-size: 2rem;
+  }
+  
+  .proyectos-subtitulo {
+    font-size: 1rem;
+  }
+  
+  .proyectos-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .modal-content {
+    max-height: 85vh;
+  }
+  
+  .modal-header {
+    padding: 1.5rem 1.5rem 1rem;
+  }
+  
+  .modal-body {
+    padding: 0.5rem 1.5rem 1.5rem;
+  }
+  
+  .modal-imagen {
+    max-height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .modal-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .modal-descripcion h3,
+  .modal-habilidades h3,
+  .modal-repositorios h3 {
+    font-size: 1.2rem;
+  }
 }

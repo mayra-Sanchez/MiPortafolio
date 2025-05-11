@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import '../styles/Cursos.css'; // Asegúrate de crear y vincular el CSS adecuado
+import '../styles/Cursos.css';
+import { FaFilePdf, FaGraduationCap, FaTimes, FaChevronRight } from 'react-icons/fa';
 import curso1 from "../assets/cursos/productos.pdf";
 import curso2 from "../assets/cursos/file (1).pdf";
 import curso3 from "../assets/cursos/file (2).pdf";
@@ -19,6 +20,7 @@ type Curso = {
   descripcionBreve: string;
   descripcionCompleta: string;
   certificadoUrl: string;
+    institucion?: string;
 };
 
 const cursosData: Curso[] = [
@@ -107,7 +109,6 @@ const cursosData: Curso[] = [
     certificadoUrl: curso13
   },
 ];
-
 const Cursos = () => {
   const [modalCurso, setModalCurso] = useState<Curso | null>(null);
 
@@ -120,43 +121,68 @@ const Cursos = () => {
   };
 
   return (
-    <div className="cursos">
-      <h1>Cursos</h1>
-      <p className='parrafo'>Estos son los cursos que he realizado, cada uno con su descripción y mi certificado </p>
-      <div className="courses-container">
+    <section className="cursos-section">
+      <div className="cursos-header">
+        <h1>Mis Certificaciones</h1>
+        <p className="cursos-subtitulo">
+          Conoce los cursos y certificaciones que he completado para fortalecer mis habilidades profesionales
+        </p>
+      </div>
+
+      <div className="cursos-grid">
         {cursosData.map((curso) => (
-          <div 
-            key={curso.id} 
-            className="course-card" 
-            onClick={() => abrirModal(curso)}
-          >
-            <h2>{curso.titulo}</h2>
-            <p>{curso.descripcionBreve}</p>
-          </div>
+          <article key={curso.id} className="curso-card" onClick={() => abrirModal(curso)}>
+            <div className="curso-icon">
+              <FaGraduationCap size={24} />
+            </div>
+            <div className="curso-content">
+              <h3>{curso.titulo}</h3>
+              <p>{curso.descripcionBreve}</p>
+              <div className="curso-meta">
+                <span className="institucion">{curso.institucion || 'Banco de Occidente'}</span>
+                <button className="ver-detalles">
+                  Ver detalles <FaChevronRight size={12} />
+                </button>
+              </div>
+            </div>
+          </article>
         ))}
       </div>
 
       {modalCurso && (
         <div className="modal-overlay" onClick={cerrarModal}>
-          <div 
-            className="modal-content" 
-            onClick={(e) => e.stopPropagation()} // Evita cerrar el modal al hacer clic dentro
-          >
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <button className="modal-close" onClick={cerrarModal}>
-              &times;
+              <FaTimes />
             </button>
-            <h2>{modalCurso.titulo}</h2>
-            <p>{modalCurso.descripcionCompleta}</p>
-            <button
-              onClick={() => window.open(modalCurso.certificadoUrl, '_blank')}
-              className="btn-certificado"
-            >
-              Ver Certificado
-            </button>
+            
+            <div className="modal-header">
+              <div className="modal-icon">
+                <FaGraduationCap size={32} />
+              </div>
+              <h2>{modalCurso.titulo}</h2>
+              <span className="modal-institucion">
+                {modalCurso.institucion || 'Banco de Occidente'}
+              </span>
+            </div>
+
+            <div className="modal-body">
+              <div className="modal-descripcion">
+                <h3>Descripción del Curso</h3>
+                <p>{modalCurso.descripcionCompleta}</p>
+              </div>
+
+              <button
+                onClick={() => window.open(modalCurso.certificadoUrl, '_blank')}
+                className="btn-certificado"
+              >
+                <FaFilePdf /> Ver Certificado
+              </button>
+            </div>
           </div>
         </div>
       )}
-    </div>
+    </section>
   );
 };
 

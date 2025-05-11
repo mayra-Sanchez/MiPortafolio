@@ -1,25 +1,23 @@
 import { useState } from 'react';
 import '../styles/Proyectos.css';
-import { FaReact, FaDatabase, FaGithub,FaCloud, FaGlobe, FaPython, FaJs, FaCss3, FaHtml5 } from 'react-icons/fa';
+import { FaReact, FaDatabase, FaGithub, FaCloud, FaGlobe, FaPython, FaJs, FaCss3, FaHtml5, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaAngular } from 'react-icons/fa6';
 import imagen1 from '../assets/Captura de pantalla 2025-02-07 093030.png';
 import imagen2 from '../assets/tutor_virtual.png';
 import imagen3 from '../assets/cheap.png';
 import imagen4 from '../assets/food.png';
 import imagen5 from '../assets/community.png';
-import { FaAngular } from 'react-icons/fa6';
 
-// Definir el tipo de Proyecto
 interface Proyecto {
   id: number;
   nombre: string;
   descripcion: string;
   imagen: string;
   enlace: string;
-  habilidades: { nombre: string; icono: JSX.Element }[];
+  habilidades: { nombre: string; icono: JSX.Element; color: string }[];
   repositorios: { nombre: string; url: string }[];
 }
 
-// Datos de los proyectos
 const proyectosData: Proyecto[] = [
   {
     id: 1,
@@ -28,13 +26,13 @@ const proyectosData: Proyecto[] = [
     imagen: imagen1,
     enlace: 'https://wm-siteweb.vercel.app/',
     habilidades: [
-      { nombre: 'Angular', icono: <FaAngular size={24} color="red" /> },
-      { nombre: 'CSS', icono: <FaCss3 size={24} color="#61DBFB" /> },
-      { nombre: 'Django', icono: <FaPython size={24} color="#3C873A" /> },
-      { nombre: 'PostgreSQL', icono: <FaDatabase size={24} color="black" /> },
-      { nombre: 'HTML', icono: <FaHtml5 size={24} color="#orange" /> },
-      { nombre: 'DigitalOcean', icono: <FaCloud size={24} color="#0080FF" /> },
-      { nombre: 'Namecheap', icono: <FaGlobe size={24} color="#FF6600" /> }
+      { nombre: 'Angular', icono: <FaAngular size={20} />, color: '#DD0031' },
+      { nombre: 'CSS', icono: <FaCss3 size={20} />, color: '#2965F1' },
+      { nombre: 'Django', icono: <FaPython size={20} />, color: '#092E20' },
+      { nombre: 'PostgreSQL', icono: <FaDatabase size={20} />, color: '#336791' },
+      { nombre: 'HTML', icono: <FaHtml5 size={20} />, color: '#E34F26' },
+      { nombre: 'DigitalOcean', icono: <FaCloud size={20} />, color: '#0080FF' },
+      { nombre: 'Namecheap', icono: <FaGlobe size={20} />, color: '#DE3723' }
     ],
     repositorios: [
       { nombre: 'Frontend', url: 'https://github.com/mayra-Sanchez/wm_siteweb' },
@@ -48,10 +46,10 @@ const proyectosData: Proyecto[] = [
     imagen: imagen2,
     enlace: 'https://tutor-virtual-ten.vercel.app/',
     habilidades: [
-      { nombre: 'React', icono: <FaReact size={24} color="#61DBFB" /> },
-      { nombre: 'JavaScript', icono: <FaJs size={24} color="yellow" /> },
-      { nombre: 'CSS', icono: <FaCss3 size={24} color="#61DBFB" /> },
-      { nombre: 'HTML', icono: <FaHtml5 size={24} color="#orange" /> },
+      { nombre: 'React', icono: <FaReact size={20} />, color: '#61DAFB' },
+      { nombre: 'JavaScript', icono: <FaJs size={20} />, color: '#F7DF1E' },
+      { nombre: 'CSS', icono: <FaCss3 size={20} />, color: '#2965F1' },
+      { nombre: 'HTML', icono: <FaHtml5 size={20} />, color: '#E34F26' },
     ],
     repositorios: [
       { nombre: 'Frontend', url: 'https://github.com/mayra-Sanchez/TutorVirtual' },
@@ -61,15 +59,15 @@ const proyectosData: Proyecto[] = [
   {
     id: 3,
     nombre: 'Cheap Fly',
-    descripcion: 'Esta aplicación te ayuda a encontrar y comparar los vuelos más económicos disponibles en diferentes aerolíneas y sitios web de viajes, facilitando la búsqueda de opciones de viaje económicas y accesibles',
+    descripcion: 'Esta aplicación te ayuda a encontrar y comparar los vuelos más económicos disponibles en diferentes aerolíneas y sitios web de viajes, facilitando la búsqueda de opciones de viaje económicas y accesibles.',
     imagen: imagen3,
     enlace: '',
     habilidades: [
-      { nombre: 'React', icono: <FaReact size={24} color="#61DBFB" /> },
-      { nombre: 'JavaScript', icono: <FaJs size={24} color="yellow" /> },
-      { nombre: 'CSS', icono: <FaCss3 size={24} color="#61DBFB" /> },
-      { nombre: 'HTML', icono: <FaHtml5 size={24} color="#orange" /> },
-      { nombre: 'Django', icono: <FaPython size={24} color="#3C873A" /> },
+      { nombre: 'React', icono: <FaReact size={20} />, color: '#61DAFB' },
+      { nombre: 'JavaScript', icono: <FaJs size={20} />, color: '#F7DF1E' },
+      { nombre: 'CSS', icono: <FaCss3 size={20} />, color: '#2965F1' },
+      { nombre: 'HTML', icono: <FaHtml5 size={20} />, color: '#E34F26' },
+      { nombre: 'Django', icono: <FaPython size={20} />, color: '#092E20' },
     ],
     repositorios: [
       { nombre: 'Frontend', url: 'https://github.com/mayra-Sanchez/CheapFly_front' },
@@ -83,11 +81,11 @@ const proyectosData: Proyecto[] = [
     imagen: imagen4,
     enlace: '',
     habilidades: [
-      { nombre: 'React', icono: <FaReact size={24} color="#61DBFB" /> },
-      { nombre: 'JavaScript', icono: <FaJs size={24} color="yellow" /> },
-      { nombre: 'CSS', icono: <FaCss3 size={24} color="#61DBFB" /> },
-      { nombre: 'HTML', icono: <FaHtml5 size={24} color="#orange" /> },
-      { nombre: 'Django', icono: <FaPython size={24} color="#3C873A" /> },
+      { nombre: 'React', icono: <FaReact size={20} />, color: '#61DAFB' },
+      { nombre: 'JavaScript', icono: <FaJs size={20} />, color: '#F7DF1E' },
+      { nombre: 'CSS', icono: <FaCss3 size={20} />, color: '#2965F1' },
+      { nombre: 'HTML', icono: <FaHtml5 size={20} />, color: '#E34F26' },
+      { nombre: 'Django', icono: <FaPython size={20} />, color: '#092E20' },
     ],
     repositorios: [
       { nombre: 'Frontend', url: 'https://github.com/Lau36/FoodLens' },
@@ -97,14 +95,14 @@ const proyectosData: Proyecto[] = [
   {
     id: 5,
     nombre: 'Community Landing',
-    descripcion: 'Landing para empresa comunnity manager',
+    descripcion: 'Landing page profesional para empresa de community management, diseñada para mostrar servicios y captar clientes potenciales.',
     imagen: imagen5,
     enlace: 'https://mayra-sanchez.github.io/community_landing/',
     habilidades: [
-      { nombre: 'React', icono: <FaReact size={24} color="#61DBFB" /> },
-      { nombre: 'JavaScript', icono: <FaJs size={24} color="yellow" /> },
-      { nombre: 'CSS', icono: <FaCss3 size={24} color="#61DBFB" /> },
-      { nombre: 'HTML', icono: <FaHtml5 size={24} color="#orange" /> },
+      { nombre: 'React', icono: <FaReact size={20} />, color: '#61DAFB' },
+      { nombre: 'JavaScript', icono: <FaJs size={20} />, color: '#F7DF1E' },
+      { nombre: 'CSS', icono: <FaCss3 size={20} />, color: '#2965F1' },
+      { nombre: 'HTML', icono: <FaHtml5 size={20} />, color: '#E34F26' },
     ],
     repositorios: [
       { nombre: 'Frontend', url: 'https://github.com/mayra-Sanchez/community_landing' },
@@ -115,33 +113,46 @@ const proyectosData: Proyecto[] = [
 const Proyectos = () => {
   const [modalProyecto, setModalProyecto] = useState<Proyecto | null>(null);
 
-  // Función para abrir el modal del proyecto
-  const abrirModal = (proyecto: Proyecto) => {
-    setModalProyecto(proyecto);
-  };
-
-  // Función para cerrar el modal
-  const cerrarModal = () => {
-    setModalProyecto(null);
-  };
+  const abrirModal = (proyecto: Proyecto) => setModalProyecto(proyecto);
+  const cerrarModal = () => setModalProyecto(null);
 
   return (
-    <div className="proyectos">
-      <h1>Mis Proyectos</h1>
-      <p className='parrafo'>Aquí puedes ver algunos de mis proyectos destacados.</p>
-      <div className="proyectos-container">
+    <section className="proyectos-section">
+      <div className="proyectos-header">
+        <h1>Mis Proyectos Destacados</h1>
+        <p className="proyectos-subtitulo">Explora mi trabajo y las tecnologías que he utilizado para crear soluciones innovadoras</p>
+      </div>
+
+      <div className="proyectos-grid">
         {proyectosData.map((proyecto) => (
-          <div
-            key={proyecto.id}
-            className="proyecto-card"
-            onClick={() => abrirModal(proyecto)}
-          >
-            <img src={proyecto.imagen} alt="Proyecto" className="proyecto-imagen" />
-            <div className="proyecto-info">
-              <h2>{proyecto.nombre}</h2>
-              <p>{proyecto.descripcion}</p>
+          <article key={proyecto.id} className="proyecto-card" onClick={() => abrirModal(proyecto)}>
+            <div className="proyecto-imagen-container">
+              <img 
+                src={proyecto.imagen} 
+                alt={proyecto.nombre} 
+                className="proyecto-imagen"
+                loading="lazy"
+              />
+              <div className="proyecto-overlay">
+                <h3>{proyecto.nombre}</h3>
+                <button className="ver-detalles-btn">Ver detalles</button>
+              </div>
             </div>
-          </div>
+            <div className="proyecto-habilidades">
+              {proyecto.habilidades.slice(0, 4).map((habilidad, index) => (
+                <span 
+                  key={index} 
+                  className="habilidad-badge"
+                  style={{ backgroundColor: habilidad.color }}
+                >
+                  {habilidad.icono}
+                </span>
+              ))}
+              {proyecto.habilidades.length > 4 && (
+                <span className="habilidad-more">+{proyecto.habilidades.length - 4}</span>
+              )}
+            </div>
+          </article>
         ))}
       </div>
 
@@ -151,45 +162,72 @@ const Proyectos = () => {
             <button className="modal-close" onClick={cerrarModal}>
               &times;
             </button>
-            <h2>{modalProyecto.nombre}</h2>
-            <p>{modalProyecto.descripcion}</p>
+            
+            <div className="modal-header">
+              <h2>{modalProyecto.nombre}</h2>
+              {modalProyecto.enlace && (
+                <a 
+                  href={modalProyecto.enlace} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="enlace-proyecto"
+                >
+                  <FaExternalLinkAlt /> Visitar sitio
+                </a>
+              )}
+            </div>
 
-            {/* Habilidades utilizadas */}
-            <div className="habilidades">
-              <h3>Habilidades Utilizadas</h3>
-              <div className="habilidades-lista">
-                {modalProyecto.habilidades.map((habilidad, index) => (
-                  <div key={index} className="habilidad-item">
-                    {habilidad.icono}
-                    <span>{habilidad.nombre}</span>
-                  </div>
-                ))}
+            <div className="modal-body">
+              <img 
+                src={modalProyecto.imagen} 
+                alt={modalProyecto.nombre} 
+                className="modal-imagen"
+              />
+              
+              <div className="modal-descripcion">
+                <h3>Descripción del Proyecto</h3>
+                <p>{modalProyecto.descripcion}</p>
+              </div>
+
+              <div className="modal-habilidades">
+                <h3>Tecnologías Utilizadas</h3>
+                <div className="habilidades-lista">
+                  {modalProyecto.habilidades.map((habilidad, index) => (
+                    <div 
+                      key={index} 
+                      className="habilidad-item"
+                      style={{ borderColor: habilidad.color }}
+                    >
+                      <div className="habilidad-icon" style={{ color: habilidad.color }}>
+                        {habilidad.icono}
+                      </div>
+                      <span>{habilidad.nombre}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="modal-repositorios">
+                <h3>Repositorios</h3>
+                <div className="repositorios-lista">
+                  {modalProyecto.repositorios.map((repo, index) => (
+                    <a
+                      key={index}
+                      href={repo.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="repositorio-link"
+                    >
+                      <FaGithub /> {repo.nombre}
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
-
-            {/* Enlaces a los repositorios */}
-            <div className="repositorios">
-              <h3>Repositorios en GitHub</h3>
-              {modalProyecto.repositorios.map((repo, index) => (
-                <a
-                  key={index}
-                  href={repo.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-repositorio"
-                >
-                  <FaGithub size={20} /> {repo.nombre}
-                </a>
-              ))}
-            </div>
-
-            <a href={modalProyecto.enlace} target="_blank" rel="noopener noreferrer" className="btn-proyecto">
-              Ver Proyecto
-            </a>
           </div>
         </div>
       )}
-    </div>
+    </section>
   );
 };
 

@@ -13,6 +13,7 @@ import certificado5 from "../assets/certificados/Coursera MSZH0VO8RNZX.pdf";
 import certificado6 from "../assets/certificados/Coursera CNPH0UKTODL7.pdf";
 import certificado7 from "../assets/certificados/certificate.pdf";
 import certificado8 from "../assets/certificados/Coursera NTHSA2KKY2PO.pdf";
+import { FaFilePdf, FaTimes, FaExternalLinkAlt, FaCalendarAlt, FaIdCard } from 'react-icons/fa';
 
 // Definir el tipo de Certificado
 interface Certificado {
@@ -57,35 +58,51 @@ const certificadosData: Certificado[] = [
 const Certificados = () => {
   const [modalCertificado, setModalCertificado] = useState<Certificado | null>(null);
 
-  // Función para abrir el modal del certificado
   const abrirModal = (certificado: Certificado) => {
     setModalCertificado(certificado);
   };
 
-  // Función para cerrar el modal
   const cerrarModal = () => {
     setModalCertificado(null);
   };
 
   return (
-    <div className="certificados">
-      <h1>Licencias y certificaciones</h1>
-      <p className='parrafo'>Estos son las licencias y los certificadoos que he realizado</p>
-      <div className="certificados-container">
+    <section className="certificados-section">
+      <div className="certificados-header">
+        <h1>Licencias y Certificaciones</h1>
+        <p className="certificados-subtitulo">
+          Documentación oficial que acredita mis conocimientos y habilidades profesionales
+        </p>
+      </div>
+
+      <div className="certificados-grid">
         {certificadosData.map((certificado) => (
-          <div
-            key={certificado.id}
+          <article 
+            key={certificado.id} 
             className="certificado-card"
             onClick={() => abrirModal(certificado)}
           >
-            <img src={certificado.logo} alt="Logo" className="certificado-logo" />
-            <div className="certificado-info">
-              <h2>{certificado.titulo}</h2>
-              <p>{certificado.institucion}</p>
-              <p>Fecha de expedición: {certificado.fecha}</p>
-              <p>ID de la credencial: {certificado.idCredencial}</p>
+            <div className="certificado-logo-container">
+              <img 
+                src={certificado.logo} 
+                alt={`Logo ${certificado.institucion}`} 
+                className="certificado-logo"
+                loading="lazy"
+              />
             </div>
-          </div>
+            <div className="certificado-content">
+              <h3>{certificado.titulo}</h3>
+              <p className="institucion">{certificado.institucion}</p>
+              <div className="certificado-meta">
+                <span className="fecha">
+                  <FaCalendarAlt /> {certificado.fecha}
+                </span>
+                <button className="ver-certificado">
+                  Ver certificado <FaExternalLinkAlt size={12} />
+                </button>
+              </div>
+            </div>
+          </article>
         ))}
       </div>
 
@@ -93,19 +110,53 @@ const Certificados = () => {
         <div className="modal-overlay" onClick={cerrarModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <button className="modal-close" onClick={cerrarModal}>
-              &times;
+              <FaTimes />
             </button>
-            <h2>{modalCertificado.titulo}</h2>
-            <p>Institución: {modalCertificado.institucion}</p>
-            <p>Fecha: {modalCertificado.fecha}</p>
-            <p>ID de la credencial: {modalCertificado.idCredencial}</p>
-            <a href={modalCertificado.archivoCertificado} target="_blank" rel="noopener noreferrer" className="btn-certificado">
-              Ver Certificado
-            </a>
+            
+            <div className="modal-header">
+              <div className="modal-logo-container">
+                <img 
+                  src={modalCertificado.logo} 
+                  alt={`Logo ${modalCertificado.institucion}`}
+                  className="modal-logo"
+                />
+              </div>
+              <h2>{modalCertificado.titulo}</h2>
+              <p className="modal-institucion">{modalCertificado.institucion}</p>
+            </div>
+
+            <div className="modal-body">
+              <div className="modal-details">
+                <div className="detail-item">
+                  <FaCalendarAlt className="detail-icon" />
+                  <div>
+                    <p className="detail-label">Fecha de expedición</p>
+                    <p className="detail-value">{modalCertificado.fecha}</p>
+                  </div>
+                </div>
+                
+                <div className="detail-item">
+                  <FaIdCard className="detail-icon" />
+                  <div>
+                    <p className="detail-label">ID de credencial</p>
+                    <p className="detail-value">{modalCertificado.idCredencial}</p>
+                  </div>
+                </div>
+              </div>
+
+              <a
+                href={modalCertificado.archivoCertificado}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-certificado"
+              >
+                <FaFilePdf /> Ver Certificado Completo
+              </a>
+            </div>
           </div>
         </div>
       )}
-    </div>
+    </section>
   );
 };
 

@@ -9,7 +9,6 @@ import Contacto from './pages/Contacto';
 import Proyectos from './pages/Proyectos';
 import Cursos from './pages/Cursos';
 import Certificados from './pages/Certificados';
-import './App.css';
 
 function App() {
   return (

@@ -3,7 +3,7 @@ import javascript from '../assets/icons/javascript.svg';
 import react from '../assets/icons/react.svg';
 import angular from '../assets/icons/angular.svg';
 import postgreSQL from '../assets/icons/postgresql.svg';
-import pyhton from '../assets/icons/python.svg';
+import python from '../assets/icons/python.svg';
 import docker from '../assets/icons/docker.svg';
 import git from '../assets/icons/git.svg';
 import github from '../assets/icons/github.svg';
@@ -11,7 +11,6 @@ import scratch from '../assets/icons/scratch.svg';
 import jira from '../assets/icons/jira.svg';
 import django from '../assets/icons/django.svg';
 import vercel from '../assets/icons/vercel.svg';
-import python from '../assets/icons/python.svg';
 import java from '../assets/icons/java-svgrepo-com.svg';
 import css from '../assets/icons/css.svg';
 import html from '../assets/icons/html5.svg';
@@ -27,51 +26,86 @@ import digitalocean from '../assets/icons/digitalocean-official.svg';
 import namecheap from '../assets/icons/namecheap.svg';
 import wordpress from '../assets/icons/wordpress-logo.svg';
 
-
 const habilidades = [
-  { nombre: "JavaScript", logo: javascript, descripcion: "Lenguaje de programación para aplicaciones web." },
-  { nombre: "React", logo: react, descripcion: "Librería para construir interfaces de usuario." },
-  { nombre: "Angular", logo: angular, descripcion: "Framework para aplicaciones web dinámicas." },
-  { nombre: "PostgreSQL", logo: postgreSQL, descripcion: "Base de datos relacional de código abierto." },
-  { nombre: "Python", logo: pyhton, descripcion: "Lenguaje de programación versátil." },
-  { nombre: "Docker", logo: docker, descripcion: "Herramienta para la creación de contenedores." },
-  { nombre: "Github", logo: github, descripcion: "Plataforma de hospedaje para proyectos de código." },
-  { nombre: "Git", logo: git, descripcion: "Sistema de control de versiones." },
-  { nombre: "Scratch", logo: scratch, descripcion: "Lenguaje visual para aprender programación." },
-  { nombre: "Jira", logo: jira, descripcion: "Herramienta para gestión de proyectos ágiles." },
-  { nombre: "Django", logo: django, descripcion: "Framework para desarrollo web en Python." },
-  { nombre: "Vercel", logo: vercel, descripcion: "Plataforma para despliegue de aplicaciones web." },
-  { nombre: "Python", logo: python, descripcion: "Lenguaje de programación versátil." },
-  { nombre: "Java", logo: java, descripcion: "Lenguaje de programación orientado a objetos." },
-  { nombre: "HTML", logo: html, descripcion: "Lenguaje de marcado para estructurar páginas web." },
-  { nombre: "CSS", logo: css, descripcion: "Lenguaje de estilos para diseño web." },
-  { nombre: "Power BI", logo: powerbi, descripcion: "Herramienta de análisis de datos y visualización." },
-  { nombre: "UX/UI", logo: uxui, descripcion: "Diseño centrado en la experiencia de usuario." },
-  { nombre: "Scrum", logo: scrum, descripcion: "Metodología ágil para gestión de proyectos." },
-  { nombre: "IEEE 830", logo: ieee830, descripcion: "Estándar para documentación de requerimientos de software." },
-  { nombre: "Selenium", logo: selenium, descripcion: "Herramienta para automatización de pruebas en navegadores." },
-  { nombre: "JUnit", logo: junit, descripcion: "Framework para pruebas unitarias en Java." },
-  { nombre: "Gherkin", logo: gherkin, descripcion: "Lenguaje para escribir pruebas en BDD." },
-  { nombre: "Cucumber", logo: cucumber, descripcion: "Herramienta para pruebas de aceptación BDD." },
-  { nombre: "DigitalOcean", logo: digitalocean, descripcion: "Plataforma de cloud computing para despliegue de aplicaciones." },
-  { nombre: "Namecheap", logo: namecheap, descripcion: "Servicio de registro de dominios y hosting web." },
-  { nombre: "WordPress", logo: wordpress, descripcion: "Sistema de gestión de contenidos (CMS) para crear sitios web." }
+  { nombre: "JavaScript", logo: javascript, categoria: "lenguajes" },
+  { nombre: "React", logo: react, categoria: "frameworks" },
+  { nombre: "Angular", logo: angular, categoria: "frameworks" },
+  { nombre: "PostgreSQL", logo: postgreSQL, categoria: "bases-datos" },
+  { nombre: "Python", logo: python, categoria: "lenguajes" },
+  { nombre: "Docker", logo: docker, categoria: "devops" },
+  { nombre: "GitHub", logo: github, categoria: "herramientas" },
+  { nombre: "Git", logo: git, categoria: "herramientas" },
+  { nombre: "Scratch", logo: scratch, categoria: "educacion" },
+  { nombre: "Jira", logo: jira, categoria: "herramientas" },
+  { nombre: "Django", logo: django, categoria: "frameworks" },
+  { nombre: "Vercel", logo: vercel, categoria: "devops" },
+  { nombre: "Java", logo: java, categoria: "lenguajes" },
+  { nombre: "HTML", logo: html, categoria: "frontend" },
+  { nombre: "CSS", logo: css, categoria: "frontend" },
+  { nombre: "Power BI", logo: powerbi, categoria: "analisis-datos" },
+  { nombre: "UX/UI", logo: uxui, categoria: "design" },
+  { nombre: "Scrum", logo: scrum, categoria: "metodologias" },
+  { nombre: "IEEE 830", logo: ieee830, categoria: "documentacion" },
+  { nombre: "Selenium", logo: selenium, categoria: "testing" },
+  { nombre: "JUnit", logo: junit, categoria: "testing" },
+  { nombre: "Gherkin", logo: gherkin, categoria: "testing" },
+  { nombre: "Cucumber", logo: cucumber, categoria: "testing" },
+  { nombre: "DigitalOcean", logo: digitalocean, categoria: "devops" },
+  { nombre: "Namecheap", logo: namecheap, categoria: "hosting" },
+  { nombre: "WordPress", logo: wordpress, categoria: "cms" }
+];
+
+const categorias = [
+  { id: "lenguajes", nombre: "Lenguajes de Programación" },
+  { id: "frameworks", nombre: "Frameworks y Librerías" },
+  { id: "frontend", nombre: "Frontend" },
+  { id: "bases-datos", nombre: "Bases de Datos" },
+  { id: "devops", nombre: "DevOps & Cloud" },
+  { id: "herramientas", nombre: "Herramientas" },
+  { id: "testing", nombre: "Testing & QA" },
+  { id: "metodologias", nombre: "Metodologías" },
+  { id: "design", nombre: "Diseño UX/UI" },
+  { id: "analisis-datos", nombre: "Análisis de Datos" },
+  { id: "documentacion", nombre: "Documentación" },
+  { id: "hosting", nombre: "Hosting & Dominios" },
+  { id: "cms", nombre: "CMS" },
+  { id: "educacion", nombre: "Educación" }
 ];
 
 const Habilidades = () => {
   return (
-    <div className="habilidades">
-      <h1>Mis Habilidades</h1>
-      <div className="habilidades-container">
-        {habilidades.map((habilidad, index) => (
-          <div key={index} className="habilidad-card">
-            <img src={habilidad.logo} alt={habilidad.nombre} className="icon" />
-            <p>{habilidad.nombre}</p>
-            <p className="descripcion">{habilidad.descripcion}</p>
-          </div>
-        ))}
+    <section className="habilidades-container">
+      <h1 className="habilidades-titulo">Mis Habilidades Técnicas</h1>
+      <p className="habilidades-subtitulo">Conocimientos y tecnologías que domino y utilizo en mis proyectos</p>
+      
+      <div className="categorias-container">
+        {categorias.map(categoria => {
+          const habilidadesCategoria = habilidades.filter(h => h.categoria === categoria.id);
+          if (habilidadesCategoria.length === 0) return null;
+          
+          return (
+            <div key={categoria.id} className="categoria-section">
+              <h2 className="categoria-titulo">{categoria.nombre}</h2>
+              <div className="habilidades-grid">
+                {habilidadesCategoria.map((habilidad, index) => (
+                  <div key={index} className="habilidad-card">
+                    <div className="habilidad-icon-container">
+                      <img 
+                        src={habilidad.logo} 
+                        alt={habilidad.nombre} 
+                        className="habilidad-icon"
+                        loading="lazy"
+                      />
+                    </div>
+                    <h3 className="habilidad-nombre">{habilidad.nombre}</h3>
+                  </div>
+                ))}
+              </div>
+            </div>
+          );
+        })}
       </div>
-    </div>
+    </section>
   );
 };
 
