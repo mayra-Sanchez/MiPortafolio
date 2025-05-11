@@ -23,6 +23,7 @@ import certificado14 from "../assets/certificados/diploma-hablar-en-publico.pdf"
 import certificado15 from "../assets/certificados/diploma-mentoring-lideres.pdf";
 import certificado16 from "../assets/certificados/diploma-ingles-a1-principiantes.pdf";
 import certificado17 from "../assets/certificados/diploma-proyectos-jira.pdf";
+import certificado18 from "../assets/certificados/diploma-herramientasmanagers.pdf";
 
 import { FaFilePdf, FaTimes, FaExternalLinkAlt, FaCalendarAlt, FaIdCard } from 'react-icons/fa';
 
@@ -73,6 +74,7 @@ const certificadosData: Certificado[] = [
   { id: 15, logo: logoPlatzi, titulo: "Curso de Mentoring y Coaching para Líderes", institucion: "Platzi", fecha: "Abr. 2025", idCredencial: "90dd449e-6e8d-4808-bf88-8b92f244ee57", archivoCertificado: certificado15 },
   { id: 16, logo: logoPlatzi, titulo: "Curso de Inglés Básico A1 para Principiantes", institucion: "Platzi", fecha: "Abr. 2025", idCredencial: "40922ff3-f62a-492c-bdaf-b8e296023661", archivoCertificado: certificado16 },
   { id: 17, logo: logoPlatzi, titulo: "Curso de Gestión de Proyectos con Jira", institucion: "Platzi", fecha: "Abr. 2025", idCredencial: "a72454ab-e4a8-424d-988c-f1caac49713c", archivoCertificado: certificado17 },
+  { id: 18, logo: logoPlatzi, titulo: "Curso de Herramientas para Managers", institucion: "Platzi", fecha: "May. 2025", idCredencial: "5553e18f-0825-4c5b-9240-2299c4ddd16c", archivoCertificado: certificado18 },
 ];
 
 const Certificados = () => {

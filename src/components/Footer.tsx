@@ -1,5 +1,6 @@
 import { FaGithub, FaLinkedin, FaFilePdf } from "react-icons/fa";
 import "../styles/Footer.css";
+import cv from '../assets/mi_cv.pdf';
 
 const Footer = () => {
   return (
@@ -25,7 +26,7 @@ const Footer = () => {
             <FaLinkedin className="social-icon" />
           </a>
           <a
-            href="path-to-your-cv.pdf"
+            href= {cv}
             target="_blank"
             rel="noopener noreferrer"
             download
@@ -35,6 +36,7 @@ const Footer = () => {
             <FaFilePdf className="social-icon" />
             <span>CV</span>
           </a>
+
         </div>
 
         <div className="footer-copyright">
