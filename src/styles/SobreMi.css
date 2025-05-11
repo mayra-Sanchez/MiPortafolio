@@ -36,7 +36,7 @@
 
 .sobre-mi-titulo {
   font-size: 2.5rem;
-  color: var(--primary);
+  color: var(--dark);
   margin-bottom: 0.8rem;
   font-weight: 700;
   line-height: 1.2;
@@ -116,7 +116,7 @@
 }
 
 .timeline-date {
-  color: var(--dark) !important;
+  color: var(--white) !important;
   font-weight: 600 !important;
   opacity: 0.9;
 }

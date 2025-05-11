@@ -7,6 +7,8 @@ import imagen2 from '../assets/tutor_virtual.png';
 import imagen3 from '../assets/cheap.png';
 import imagen4 from '../assets/food.png';
 import imagen5 from '../assets/community.png';
+import imagen6 from '../assets/valdivieso.png';
+import imagen7 from '../assets/fruty.png';
 
 interface Proyecto {
   id: number;
@@ -106,6 +108,38 @@ const proyectosData: Proyecto[] = [
     ],
     repositorios: [
       { nombre: 'Frontend', url: 'https://github.com/mayra-Sanchez/community_landing' },
+    ]
+  },
+  {
+    id: 6,
+    nombre: 'Dr Valdivieso',
+    descripcion: 'Página creada para una dentista donde se tiene la información de ella y sobre su negocio',
+    imagen: imagen6,
+    enlace: 'https://dra-valdivieso.vercel.app/',
+    habilidades: [
+      { nombre: 'React', icono: <FaReact size={20} />, color: '#61DAFB' },
+      { nombre: 'JavaScript', icono: <FaJs size={20} />, color: '#F7DF1E' },
+      { nombre: 'CSS', icono: <FaCss3 size={20} />, color: '#2965F1' },
+      { nombre: 'HTML', icono: <FaHtml5 size={20} />, color: '#E34F26' },
+    ],
+    repositorios: [
+      { nombre: 'Frontend', url: 'https://github.com/mayra-Sanchez/DrValdivieso' },
+    ]
+  },
+  {
+    id: 7,
+    nombre: 'Fruity Flakes',
+    descripcion: 'Página para tienda ubicada en Australia',
+    imagen: imagen7,
+    enlace: 'https://fruity-flakes.vercel.app/',
+    habilidades: [
+      { nombre: 'React', icono: <FaReact size={20} />, color: '#61DAFB' },
+      { nombre: 'JavaScript', icono: <FaJs size={20} />, color: '#F7DF1E' },
+      { nombre: 'CSS', icono: <FaCss3 size={20} />, color: '#2965F1' },
+      { nombre: 'HTML', icono: <FaHtml5 size={20} />, color: '#E34F26' },
+    ],
+    repositorios: [
+      { nombre: 'Frontend', url: 'https://github.com/mayra-Sanchez/FruityFlakes' },
     ]
   }
 ];

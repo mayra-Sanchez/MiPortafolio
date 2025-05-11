@@ -1,18 +1,10 @@
-:root {
-  --primary: #3a86ff;
-  --primary-light: #4d9eff;
-  --dark: #2b2d42;
-  --gray: #8d99ae;
-  --light: #edf2f4;
-  --white: #ffffff;
-}
+
 
 /* Base Styles */
 .home-container {
   max-width: 1000px;
   margin: 0 auto;
   padding: 5rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Hero Section */

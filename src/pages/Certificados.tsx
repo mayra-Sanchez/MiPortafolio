@@ -13,6 +13,17 @@ import certificado5 from "../assets/certificados/Coursera MSZH0VO8RNZX.pdf";
 import certificado6 from "../assets/certificados/Coursera CNPH0UKTODL7.pdf";
 import certificado7 from "../assets/certificados/certificate.pdf";
 import certificado8 from "../assets/certificados/Coursera NTHSA2KKY2PO.pdf";
+//Cambiar desde aqui
+import certificado9 from "../assets/certificados/diploma-liderazgo-equipos.pdf";
+import certificado10 from "../assets/certificados/diploma-equipos-agiles.pdf";
+import certificado11 from "../assets/certificados/1742998255178.pdf";
+import certificado12 from "../assets/certificados/scrum1.pdf";
+import certificado13 from "../assets/certificados/scrum2.pdf";
+import certificado14 from "../assets/certificados/diploma-hablar-en-publico.pdf";
+import certificado15 from "../assets/certificados/diploma-mentoring-lideres.pdf";
+import certificado16 from "../assets/certificados/diploma-ingles-a1-principiantes.pdf";
+import certificado17 from "../assets/certificados/diploma-proyectos-jira.pdf";
+
 import { FaFilePdf, FaTimes, FaExternalLinkAlt, FaCalendarAlt, FaIdCard } from 'react-icons/fa';
 
 // Definir el tipo de Certificado
@@ -51,8 +62,17 @@ const certificadosData: Certificado[] = [
   { id: 5, logo: logoGoogle, titulo: "Fundamentos: datos, datos, en todas partes", institucion: "Google", fecha: "Mar. 2025", idCredencial: "MSZH0VO8RNZX", archivoCertificado: certificado5 },
   { id: 6, logo: logoMeta, titulo: "Control de versión", institucion: "Meta", fecha: "Feb. 2025", idCredencial: "CNPH0UKTODL7", archivoCertificado: certificado6 },
   { id: 7, logo: logoHPLife, titulo: "Gestión de proyectos con Agile", institucion: "HP LIFE", fecha: "Feb. 2025", idCredencial: "10219b0d-7d3c-4173-9f4c-aed3319e3eff", archivoCertificado: certificado7 },
-  { id: 8, logo: logoMeta, titulo: "Programación con JavaScript", institucion: "Meta", fecha: "Feb. 2025", idCredencial: "NTHSA2KKY2PO", archivoCertificado: certificado8 }
-
+  { id: 8, logo: logoMeta, titulo: "Programación con JavaScript", institucion: "Meta", fecha: "Feb. 2025", idCredencial: "NTHSA2KKY2PO", archivoCertificado: certificado8 },
+  //vccambiar desde aqui la info
+  { id: 9, logo: logoPlatzi, titulo: "Curso de Liderazgo para Equipos de Trabajo", institucion: "Platzi", fecha: "Mar. 2025", idCredencial: "569de17d-d071-4c58-bac2-4b8d6ec9af75", archivoCertificado: certificado9 },
+  { id: 10, logo: logoPlatzi, titulo: "Curso de Gestión de Equipos Ágiles", institucion: "Platzi", fecha: "Mar. 2025", idCredencial: "7b529986-1535-4509-b74c-acf581e3cffb", archivoCertificado: certificado10 },
+  { id: 11, logo: logoPlatzi, titulo: "Curso de Comunicación Efectiva para Equipos de Trabajo", institucion: "Platzi", fecha: "Mar. 2025", idCredencial: "2f8159fa-fef8-4eb2-b898-079cbd51c363", archivoCertificado: certificado11 },
+  { id: 12, logo: logoPlatzi, titulo: "Curso Profesional de Scrum", institucion: "Platzi", fecha: "Mar. 2025", idCredencial: "b399b7ce-102b-41f3-97c0-60df5fdb8486", archivoCertificado: certificado12 },
+  { id: 13, logo: logoPlatzi, titulo: "Curso de Scrum Master", institucion: "Platzi", fecha: "Abr. 2025", idCredencial: "b3a2708b-3212-4cd5-9c60-4f26c59f51bb", archivoCertificado: certificado13 },
+  { id: 14, logo: logoPlatzi, titulo: "Curso de Oratoria para Hablar en Público", institucion: "Platzi", fecha: "Abr. 2025", idCredencial: "b3120f89-0fe2-4db6-8c01-e47919d9b0ef", archivoCertificado: certificado14 },
+  { id: 15, logo: logoPlatzi, titulo: "Curso de Mentoring y Coaching para Líderes", institucion: "Platzi", fecha: "Abr. 2025", idCredencial: "90dd449e-6e8d-4808-bf88-8b92f244ee57", archivoCertificado: certificado15 },
+  { id: 16, logo: logoPlatzi, titulo: "Curso de Inglés Básico A1 para Principiantes", institucion: "Platzi", fecha: "Abr. 2025", idCredencial: "40922ff3-f62a-492c-bdaf-b8e296023661", archivoCertificado: certificado16 },
+  { id: 17, logo: logoPlatzi, titulo: "Curso de Gestión de Proyectos con Jira", institucion: "Platzi", fecha: "Abr. 2025", idCredencial: "a72454ab-e4a8-424d-988c-f1caac49713c", archivoCertificado: certificado17 },
 ];
 
 const Certificados = () => {
@@ -77,15 +97,15 @@ const Certificados = () => {
 
       <div className="certificados-grid">
         {certificadosData.map((certificado) => (
-          <article 
-            key={certificado.id} 
+          <article
+            key={certificado.id}
             className="certificado-card"
             onClick={() => abrirModal(certificado)}
           >
             <div className="certificado-logo-container">
-              <img 
-                src={certificado.logo} 
-                alt={`Logo ${certificado.institucion}`} 
+              <img
+                src={certificado.logo}
+                alt={`Logo ${certificado.institucion}`}
                 className="certificado-logo"
                 loading="lazy"
               />
@@ -112,11 +132,11 @@ const Certificados = () => {
             <button className="modal-close" onClick={cerrarModal}>
               <FaTimes />
             </button>
-            
+
             <div className="modal-header">
               <div className="modal-logo-container">
-                <img 
-                  src={modalCertificado.logo} 
+                <img
+                  src={modalCertificado.logo}
                   alt={`Logo ${modalCertificado.institucion}`}
                   className="modal-logo"
                 />
@@ -134,7 +154,7 @@ const Certificados = () => {
                     <p className="detail-value">{modalCertificado.fecha}</p>
                   </div>
                 </div>
-                
+
                 <div className="detail-item">
                   <FaIdCard className="detail-icon" />
                   <div>

@@ -1,17 +1,3 @@
-/* Habilidades.css */
-:root {
-  --primary: #4e46e5;
-  --primary-dark: #3a32d1;
-  --primary-light: #e0e7ff;
-  --secondary: #8b5cf6;
-  --accent: #ec4899;
-  --dark: #1e1b4b;
-  --light: #f8fafc;
-  --gray: #64748b;
-  --white: #ffffff;
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 .habilidades-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -21,7 +7,7 @@
 
 .habilidades-titulo {
   font-size: 2.5rem;
-  color: var(--primary);
+  color: var(--dark);
   margin-bottom: 0.8rem;
   font-weight: 700;
   text-align: center;
