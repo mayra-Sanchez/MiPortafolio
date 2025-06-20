@@ -9,6 +9,7 @@ import imagen4 from '../assets/food.png';
 import imagen5 from '../assets/community.png';
 import imagen6 from '../assets/valdivieso.png';
 import imagen7 from '../assets/fruty.png';
+import imagen8 from '../assets/kdramas.png';
 
 interface Proyecto {
   id: number;
@@ -141,7 +142,25 @@ const proyectosData: Proyecto[] = [
     repositorios: [
       { nombre: 'Frontend', url: 'https://github.com/mayra-Sanchez/FruityFlakes' },
     ]
-  }
+  },
+   {
+  id: 8,
+  nombre: 'KdramasVibes',
+  descripcion: 'KdramasVibes es una plataforma hecha para fans de los dramas coreanos. Permite ver reseñas, gestionar listas personalizadas (visto, en emisión, quiero ver), explorar fichas detalladas por drama y acceder a recomendaciones. Incorpora un reproductor flotante de música y enlaces a plataformas como Netflix o Viki.',
+  imagen: imagen8,
+  enlace: 'https://kdramas-jade.vercel.app/',
+  habilidades: [
+    { nombre: 'React', icono: <FaReact size={20} />, color: '#61DAFB' },
+    { nombre: 'JavaScript', icono: <FaJs size={20} />, color: '#F7DF1E' },
+    { nombre: 'CSS', icono: <FaCss3 size={20} />, color: '#2965F1' },
+    { nombre: 'HTML', icono: <FaHtml5 size={20} />, color: '#E34F26' },
+    { nombre: 'LocalStorage', icono: <FaDatabase size={20} />, color: '#7D4CDB' }
+  ],
+  repositorios: [
+    { nombre: 'Frontend', url: 'https://github.com/mayra-Sanchez/kdramas' }
+  ]
+}
+
 ];
 
 const Proyectos = () => {
