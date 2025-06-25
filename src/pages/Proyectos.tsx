@@ -9,7 +9,7 @@ import imagen4 from '../assets/food.png';
 import imagen5 from '../assets/community.png';
 import imagen6 from '../assets/valdivieso.png';
 import imagen7 from '../assets/fruty.png';
-import imagen8 from '../assets/kdramas.png';
+import imagen8 from '../assets/Kdramas.png';
 
 interface Proyecto {
   id: number;
