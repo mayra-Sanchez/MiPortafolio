@@ -27,9 +27,9 @@ const proyectosData: Proyecto[] = [
     nombre: 'Ecommerce WM Sport',
     descripcion: 'Plataforma de comercio electrónico desarrollada para una empresa de ropa deportiva, permitiendo la exhibición de catálogos y la gestión de ventas. El sistema cuenta con dos roles: administrador, quien gestiona productos y pedidos, y cliente, quien puede explorar el catálogo y realizar compras.',
     imagen: imagen1,
-    enlace: 'https://wm-siteweb.vercel.app/',
+    enlace: 'https://wm-one.vercel.app/',
     habilidades: [
-      { nombre: 'Angular', icono: <FaAngular size={20} />, color: '#DD0031' },
+      { nombre: 'React', icono: <FaReact size={20} />, color: '#60e4eeff' },
       { nombre: 'CSS', icono: <FaCss3 size={20} />, color: '#2965F1' },
       { nombre: 'Django', icono: <FaPython size={20} />, color: '#092E20' },
       { nombre: 'PostgreSQL', icono: <FaDatabase size={20} />, color: '#336791' },
@@ -38,8 +38,8 @@ const proyectosData: Proyecto[] = [
       { nombre: 'Namecheap', icono: <FaGlobe size={20} />, color: '#DE3723' }
     ],
     repositorios: [
-      { nombre: 'Frontend', url: 'https://github.com/mayra-Sanchez/wm_siteweb' },
-      { nombre: 'Backend', url: 'https://github.com/mayra-Sanchez/wm_backend' }
+      { nombre: 'Frontend', url: 'https://github.com/mayra-Sanchez/WM' },
+      { nombre: 'Backend', url: 'https://github.com/DylanFarkas/wm-backend' }
     ]
   },
   {
