@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import '../styles/Proyectos.css';
 import { FaReact, FaDatabase, FaGithub, FaCloud, FaGlobe, FaPython, FaJs, FaCss3, FaHtml5, FaExternalLinkAlt } from 'react-icons/fa';
-import { FaAngular } from 'react-icons/fa6';
 import imagen1 from '../assets/Captura de pantalla 2025-02-07 093030.png';
 import imagen2 from '../assets/tutor_virtual.png';
 import imagen3 from '../assets/cheap.png';
